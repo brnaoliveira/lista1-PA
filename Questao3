@@ -1,0 +1,8 @@
+p = i; // Ruim: p fica com um valor inteiro, isto é, não é o endereçamento de i;
+q = & j; // Legal: q recebe o endereco de j;
+p = & * & i; // Legal: p recebe o endereco de i;
+i = (* &) j; // Ruim: a sintaxe não funciona com os parenteses;
+i = * & j; // Legal: i recebe o valor de j;
+i = * & * & j; // Legal: i recebe o valor de j;
+q = * p; // Ruim: q fica com um valor inteiro armazenado em p, e não no endereco de p;
+i = (* p)++ + * q; // Ruim: Resulta em um número inteiro entretanto o operador ++ não tem atividade no caso.

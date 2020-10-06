@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int pulo[6] = {1,2,3,4,5,6};
+    printf("endereco do terceiro elemento de pulo = %x \n",&pulo[2]);
+    printf("pulo +2 = %x\n",pulo+2);
+    return 0;
+}
+
+// "pulo + 2" deve ser o endereço de memoria que contem o terceiro elemento de "pulo"
+// saída:
+// endereco do terceiro elemento de pulo = a22f14d8
+// pulo +2 = a22f14d8
