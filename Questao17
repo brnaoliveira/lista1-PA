@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+void soma_de_vetores (float *v1,float *v2,float *vs,int t)
+{
+    // ===== atribuição da soma do vetores digitados ao vetor da soma ====== //
+    for (int i=0;i<t;i++)
+    {
+        vs[i] = v1[i] + v2[i];
+    }
+    printf("\n");
+    //====== exibição o vetor soma ====== //
+    printf(" vetor da soma = ");
+    for(int j=0;j<t;j++)
+    {
+        printf("%f, ",vs[j]);
+    }
+    printf("\n");
+}
+
+int main()
+{
+    int t;
+    float n1,n2;
+    // ======== atribuição do tamanho dos vetores e inicialização dos vetores ========= //
+    printf("digite o numero de 'casas' dos vetors : ");
+    scanf("%d/n",&t);
+    float v1[t];
+    float v2[t];
+    float vs[t];
+    // ====== atribuição dos elementos do vetores =========//
+    printf("digite os elementos do vetores a serem somados: ");
+    printf("\n");
+    for(int i=0;i<t;i++)
+    {
+        printf("elemento %d do vetor 1 = ",i);
+        scanf("%f",&n1);
+        v1[i] = n1;
+        printf("elemento %d do vetor 2 = ",i);
+        scanf("%f",&n2);
+        v2[i] = n2;
+    }
+    //============= exibição os vetores digitados =========== //
+    printf(" v1 = ");
+    for(int j1=0;j1<t;j1++)
+    {
+        printf("%f, ",v1[j1]);
+    }
+    printf("\n");
+    printf(" v2 = ");
+    for(int j2=0;j2<t;j2++)
+    {
+        printf("%f, ",v2[j2]);
+    }
+    printf("\n");
+    // ======== chamada da função ======= //
+    soma_de_vetores(&v1,&v2,&vs,t);
+    return 0;
+}

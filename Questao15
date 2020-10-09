@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int comp (const void *a, const void *b) {
+   return ( *(int*)a - *(int*)b );
+}
+
+int main (void) {
+   int i, array[] = { 16, 12, 31, 4, 2, 52 };
+
+   qsort(array, 6, sizeof(int), comp);
+
+   for( i = 0 ; i < 6; i++ ) {
+      printf("%i ", array[i]);
+   }
+
+   return 0;
+}

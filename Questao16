@@ -1,0 +1,11 @@
+Algum dos mecanismos que possibilitam medir tempos de execução de rotinas computacionais é a biblioteca lib time.h, que calcula quanto tempo demorou 
+para determinado programa executar, com base no horário que iniciou a compilação até o horário do término. Para isso podemos usar dois operadores que 
+possibilitam executar a medição, o time(NULL) e o clock(). Fazendo os testes no programas anteriores, foi usado:
+
+float tempo;
+time_t   time_ini, time_f;
+time_ini = time(NULL);
+time_f = time(NULL);
+tempo = difftime(time_f, time_ini);
+
+Com isso foram obtidos resultados entre 0.7s e 2.0s no primeiro programa. Já no segundo caso, em torno de 0.1s.
