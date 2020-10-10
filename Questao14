@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int compara(int *x, int *y) // função de comparação usada como parametro q irá ser passado a função qsort
+{
+    if (*x > *y)
+    return 1;
+    else if (*x == *y)
+    return 0;
+    else if (*x < *y)
+    return -1;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    printf("n = %d \n",n); // leitura do numero de indices do array
+    float *Seq = malloc(n*(sizeof(float))); // alocação da memoria necessária
+    for(int i = 0; i<n;i++)
+    {
+        printf("Digite o numero da seq. de indice %d \n",i+1);
+        scanf("%f",&Seq[i]); // leitura e atribuição dos valores digitados para o array
+    }
+    /*
+        qsort é um função usada para ordenação de arrays
+        sua sintaxe consiste em:
+        qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*)), onde base é um ponteiro para o primeiro elemento do array,
+        nitems é o número de elementos do array, size é o tamanho em bytes de cada elemento do array e compar é a função criada para o problema e que compara dois elementos.
+    */
+    qsort(Seq,n,sizeof(float),(void *) compara); // função para ordenação
+
+    for(int i = 0; i<n;i++)
+    {
+        printf("%.2f, ",Seq[i]); // exibição
+    }
+
+    return 0;
+}

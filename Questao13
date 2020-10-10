@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void Ler_Ordena(float *p, int tama)
+{
+    float aux;
+    printf("Digite o primeiro valor da seq. \n");
+    scanf("%f",&p[0]);
+    for(int i = 1; i < tama; i++)
+    {
+        printf("Digite o valor de indice %d \n",i+1);
+        scanf("%f",&p[i]);
+        for(int j = i; j >= 1;j--)
+        {
+            if(p[j]<p[j-1])
+            {
+                aux = p[j-1];
+                p[j-1] = p[j];
+                p[j] = aux;
+            }
+        }
+    }
+    for(int i = 0; i < tama; i++)
+    {
+        printf("%.2f, ",p[i]);
+    }
+
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    printf("n = %d \n",n);
+    float *Seq = malloc(n*(sizeof(float)));
+    Ler_Ordena(Seq,n);
+    return 0;
+}
